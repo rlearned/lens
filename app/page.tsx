@@ -81,7 +81,7 @@ export default function LensLanding() {
                       "These numbers mean nothing to me. I trust what my neighbor tells me, not what some label says."
                     </p>
                     <p className="text-sm text-gray-600">
-                      — Ms. Zhang Wei, 52, Jiaxian County, China
+                      — Ms. Zhang Wei, 58, Jiaxian County, China
                     </p>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ export const personas: Persona[] = [
     id: 'ms-zhang',
     name: 'Ms. Zhang Wei',
     context: 'rural',
-    age: 52,
+    age: 58,
     occupation: 'Retired Factory Worker',
     location: 'Jiaxian County, Henan Province, China',
     quote: 'These numbers mean nothing to me. I trust what my neighbor tells me, not what some label says.',
