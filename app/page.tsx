@@ -544,7 +544,7 @@ export default function LensLanding() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-sage-500 mt-1 flex-shrink-0">•</span>
-                  <span><strong>Dynamic translation accuracy:</strong> Can visual metaphors (ice cubes, walking minutes) maintain accuracy across thousands of products? Does "3 sugar cubes" work for both soda and granola bars?</span>
+                  <span><strong>Dynamic translation accuracy:</strong> Can visual metaphors (sugar cubes, walking minutes) maintain accuracy across thousands of products? Does "3 sugar cubes" work for both soda and granola bars?</span>
                 </li>
               </ul>
             </div>

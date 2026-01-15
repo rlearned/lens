@@ -227,7 +227,7 @@ export default function CulturalGapViz() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500">•</span>
-                <span>Visual representations (ice cubes, traffic lights) transcend literacy</span>
+                <span>Visual representations (sugar cubes, traffic lights) transcend literacy</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500">•</span>

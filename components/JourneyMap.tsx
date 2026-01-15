@@ -58,7 +58,7 @@ export default function JourneyMap({ personas }: JourneyMapProps) {
     {
       icon: '📦',
       title: 'Sees Translated Label',
-      quote: persona.context === 'rural' ? 'Oh! 10 ice cubes - that\'s very sweet' : 'High sugar - I understand!',
+      quote: persona.context === 'rural' ? 'Oh! 10 sugar cubes - that\'s very sweet' : 'High sugar - I understand!',
       time: '~8 seconds',
       status: 'decision',
     },
