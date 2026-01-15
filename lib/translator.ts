@@ -192,8 +192,11 @@ function translateSodium(sodium_mg: number, context: CulturalContext): VisualTra
   return translations[context][level];
 }
 
-// Calories Translation
+// Calories Translation - Universal Body-Based Measurements
 function translateCalories(calories: number, context: CulturalContext): VisualTranslation {
+  // Universal: ~5 calories per minute of walking at moderate pace
+  const walkingMinutes = (calories / 5).toFixed(1);
+  
   const translations: Record<CulturalContext, Record<string, VisualTranslation>> = {
     weird: {
       low: {
@@ -218,41 +221,41 @@ function translateCalories(calories: number, context: CulturalContext): VisualTr
     rural: {
       low: {
         type: 'comparison',
-        value: Math.round(calories / 200),
-        display: `🍚 ${Math.round(calories / 200)} bowl${Math.round(calories / 200) !== 1 ? 's' : ''} of rice worth`,
-        explanation: 'Rice bowls: Primary calorie reference for Chinese consumers',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 ${walkingMinutes} minutes of walking`,
+        explanation: 'Walking time: Universal body-based measurement everyone understands',
       },
       medium: {
         type: 'comparison',
-        value: Math.round(calories / 200),
-        display: `🍚 About ${Math.round(calories / 200)} bowls of rice`,
-        explanation: 'Rice bowls as familiar energy unit',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 About ${walkingMinutes} minutes of walking`,
+        explanation: 'Walking time as familiar energy unit',
       },
       high: {
         type: 'comparison',
-        value: Math.round(calories / 200),
-        display: `🍚 ${Math.round(calories / 200)} bowls of rice - That's a lot of energy!`,
-        explanation: 'Rice bowls with emphasis',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 ${walkingMinutes} minutes of walking - That's energy!`,
+        explanation: 'Walking time with emphasis',
       },
     },
     eastwa: {
       low: {
         type: 'comparison',
-        value: Math.round(calories / 150),
-        display: `🌮 About ${Math.round(calories / 150)} tortilla${Math.round(calories / 150) !== 1 ? 's' : ''}`,
-        explanation: 'Tortillas: Familiar calorie unit for Latino community',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 ${walkingMinutes} minutes of walking`,
+        explanation: 'Walking time: Universal measurement that crosses all cultural boundaries',
       },
       medium: {
         type: 'comparison',
-        value: Math.round(calories / 150),
-        display: `🌮 ${Math.round(calories / 150)} tortillas worth of energy`,
-        explanation: 'Tortillas as relatable measurement',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 ${walkingMinutes} minutes of walking`,
+        explanation: 'Walking time as relatable energy measurement',
       },
       high: {
         type: 'comparison',
-        value: Math.round(calories / 150),
-        display: `🌮 ${Math.round(calories / 150)} tortillas - Fills you up!`,
-        explanation: 'Tortillas with context',
+        value: parseFloat(walkingMinutes),
+        display: `🚶 ${walkingMinutes} minutes to walk this off!`,
+        explanation: 'Walking time with activity context',
       },
     },
     lowlit: {

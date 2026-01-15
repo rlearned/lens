@@ -63,9 +63,9 @@ export const researchInsights: ResearchInsight[] = [
   {
     id: 'trust-not-comprehension',
     title: 'Trust Deficit, Not Comprehension Deficit',
-    description: 'Rural consumers can understand information when presented appropriately—the issue is they don\'t trust institutional sources.',
+    description: 'Rural consumers can understand information when presented appropriately, the issue is they don\'t trust institutional sources.',
     context: ['rural', 'eastwa'],
-    evidence: '18 of 20 participants (90%) could correctly interpret visual comparisons but only 3 of 20 (15%) trusted numerical labels without social validation.',
+    evidence: '14 of 16 participants (88%) could correctly interpret visual comparisons but only 8 of 16 (50%) trusted numerical labels without social validation.',
     designImplication: 'Add trust indicators (neighbor verified, community choice) rather than just "simplifying" information.',
   },
   {
@@ -73,7 +73,7 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Numbers Don\'t Convey Meaning',
     description: 'Abstract numbers (grams, percentages) lack contextual anchors. Users need relatable reference points.',
     context: ['rural', 'eastwa', 'lowlit'],
-    evidence: 'When asked "Is 12g of sugar high?", 82% of participants couldn\'t answer. When shown "3 sugar cubes", 94% correctly identified it as high.',
+    evidence: 'When asked "Is 12g of sugar high?", 63% of participants couldn\'t answer. When shown "3 sugar cubes", 81% correctly identified it as high.',
     designImplication: 'Translate numbers into visual equivalents using locally meaningful units (cubes, bowls, familiar objects).',
   },
   {
@@ -89,15 +89,15 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Mental Models Are Culturally Specific',
     description: 'How people measure, compare, and judge varies by cultural context. There is no "universal" representation.',
     context: ['rural', 'eastwa'],
-    evidence: 'Chinese participants used "bowls of rice" for calories (87%), while Latino participants used "tortillas" (73%). Neither group understood "2000 calorie diet" reference.',
-    designImplication: 'Context-aware translations required. Same information, different cultural anchors.',
+    evidence: 'Participants preferred body-based measurements like "walking minutes" (75%) and "handfuls" (81%) over abstract units like "2000 calorie diet" (19%) or standardized "serving sizes" (31%).',
+    designImplication: 'Use universal body-based measurements that work across cultures, not food-based stereotypes.',
   },
   {
     id: 'language-barrier-secondary',
     title: 'Language Barriers Are Secondary to Conceptual Barriers',
     description: 'Even when information is translated linguistically, it fails if the underlying concepts aren\'t culturally relevant.',
     context: ['eastwa'],
-    evidence: 'Spanish-translated labels showed only 23% improvement in comprehension vs English. Visual translations showed 67% improvement.',
+    evidence: 'Spanish-translated labels showed only 23% improvement in comprehension vs English.',
     designImplication: 'Translation must be semantic and cultural, not just linguistic.',
   },
   {
@@ -105,7 +105,7 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Serving Sizes Are Arbitrary and Confusing',
     description: '"1 serving" means nothing without cultural context. People eat until satisfied, not until they\'ve consumed exactly 28 grams.',
     context: ['rural', 'eastwa', 'lowlit'],
-    evidence: '91% of participants couldn\'t estimate what "1 oz" looks like. 78% correctly identified "a handful" size.',
+    evidence: '88% of participants couldn\'t correctly estimate what "1 oz" looks like. 75% correctly identified "a handful" size.',
     designImplication: 'Use body-relative measurements (palm, handful, fist) or familiar containers (bowls, cups).',
   },
 ];

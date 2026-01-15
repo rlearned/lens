@@ -203,6 +203,83 @@ export const products: Product[] = [
     },
     imagePlaceholder: 'Dark bottle of Kikkoman soy sauce',
   },
+
+  // Healthy Options
+  {
+    id: 'almonds',
+    name: 'Raw Almonds',
+    brand: 'Blue Diamond',
+    category: 'snack',
+    nutrition: {
+      calories: 160,
+      sugar_g: 1,
+      sodium_mg: 0,
+      protein_g: 6,
+      fiber_g: 4,
+      servingSize: '1 oz (28g, ~23 almonds)',
+    },
+    imagePlaceholder: 'Package of raw almonds',
+  },
+  {
+    id: 'greek-yogurt',
+    name: 'Plain Greek Yogurt',
+    brand: 'Chobani',
+    category: 'snack',
+    nutrition: {
+      calories: 100,
+      sugar_g: 4,
+      sodium_mg: 60,
+      protein_g: 17,
+      fiber_g: 0,
+      servingSize: '5.3 oz (150g)',
+    },
+    imagePlaceholder: 'Container of Greek yogurt',
+  },
+  {
+    id: 'blueberries',
+    name: 'Fresh Blueberries',
+    brand: 'Driscoll\'s',
+    category: 'snack',
+    nutrition: {
+      calories: 80,
+      sugar_g: 15,
+      sodium_mg: 0,
+      protein_g: 1,
+      fiber_g: 4,
+      servingSize: '1 cup (148g)',
+    },
+    imagePlaceholder: 'Package of fresh blueberries',
+  },
+  {
+    id: 'oatmeal',
+    name: 'Old Fashioned Oats',
+    brand: 'Quaker',
+    category: 'meal',
+    nutrition: {
+      calories: 150,
+      sugar_g: 1,
+      sodium_mg: 0,
+      protein_g: 5,
+      fiber_g: 4,
+      servingSize: '1/2 cup dry (40g)',
+    },
+    imagePlaceholder: 'Container of Quaker oats',
+  },
+  {
+    id: 'salmon',
+    name: 'Wild-Caught Salmon',
+    brand: 'Fresh',
+    category: 'meal',
+    nutrition: {
+      calories: 180,
+      sugar_g: 0,
+      sodium_mg: 50,
+      protein_g: 25,
+      fiber_g: 0,
+      servingSize: '4 oz (113g)',
+    },
+    imagePlaceholder: 'Fresh salmon fillet',
+  },
 ];
 
 // Helper function to get product by ID

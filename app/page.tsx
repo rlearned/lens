@@ -6,12 +6,24 @@ import { products } from '@/data/products'
 import { personas, researchInsights } from '@/data/personas'
 import { translateNutrition } from '@/lib/translator'
 import { CulturalContext } from '@/types'
+import ComparisonView from '@/components/ComparisonView'
 
 export default function LensLanding() {
   const [selectedProduct, setSelectedProduct] = useState(products[0])
   const [selectedContext, setSelectedContext] = useState<CulturalContext>('weird')
+  const [viewMode, setViewMode] = useState<'single' | 'comparison'>('comparison')
 
   const translation = translateNutrition(selectedProduct.nutrition, selectedContext)
+
+  // Smooth scroll handler
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const navHeight = 80 // Height of fixed nav
+      const top = element.offsetTop - navHeight
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
 
   return (
     <main className="min-h-screen">
@@ -23,7 +35,7 @@ export default function LensLanding() {
             <div className="flex items-center gap-6 text-sm">
               <a href="#problem" className="text-gray-700 hover:text-sage-600 transition-colors">Problem</a>
               <a href="#research" className="text-gray-700 hover:text-sage-600 transition-colors">Research</a>
-              <a href="#solution" className="text-gray-700 hover:text-sage-600 transition-colors">Solution</a>
+              <a href="#demo" className="text-gray-700 hover:text-sage-600 transition-colors">Solution</a>
               <a href="#demo" className="btn btn-primary text-sm py-2 px-4">Try Demo</a>
             </div>
           </div>
@@ -114,7 +126,7 @@ export default function LensLanding() {
                 <div className="text-3xl mb-4">📊</div>
                 <h3 className="text-xl font-semibold mb-3">WEIRD Assumptions</h3>
                 <p className="text-gray-600">
-                  Western, Educated, Industrialized, Rich, Democratic populations represent <strong>12% of the world</strong> but inform <strong>96% of design decisions</strong>.
+                  Western, Educated, Industrialized, Rich, Democratic populations represent <strong>12% of the world</strong> but inform <strong>95% of design decisions</strong>.
                 </p>
               </div>
 
@@ -166,7 +178,7 @@ export default function LensLanding() {
             <span className="text-section-title">Research Foundation</span>
             <h2 className="mb-4">Ethnographic Research Across Two Contexts</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              30 surveys, 20 in-depth interviews, and contextual inquiry across rural China and Eastern Washington
+              16 interviews and contextual inquiry across rural China and Eastern Washington
             </p>
           </motion.div>
 
@@ -238,7 +250,7 @@ export default function LensLanding() {
                   <h4 className="font-semibold mb-2 text-sage-700">{insight.title}</h4>
                   <p className="text-sm text-gray-600 mb-3">{insight.description}</p>
                   <div className="text-xs text-gray-500 bg-gray-50 rounded p-2">
-                    <strong>Finding:</strong> {insight.evidence.slice(0, 100)}...
+                    <strong>Finding:</strong> {insight.evidence}
                   </div>
                 </motion.div>
               ))}
@@ -263,13 +275,66 @@ export default function LensLanding() {
             </p>
           </motion.div>
 
-          {/* Interactive Demo */}
-          <div className="max-w-6xl mx-auto">
-            {/* Product Selector */}
-            <div className="mb-8">
-              <label className="block text-sm font-medium text-gray-700 mb-3">Select a Product:</label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {products.slice(0, 8).map((product) => (
+          {/* View Mode Toggle */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex rounded-xl border-2 border-sage-300 p-1 bg-white">
+              <button
+                onClick={() => setViewMode('comparison')}
+                className={`px-6 py-2 rounded-lg font-medium transition-all ${
+                  viewMode === 'comparison'
+                    ? 'bg-sage-400 text-white shadow-md'
+                    : 'text-gray-600 hover:text-sage-600'
+                }`}
+              >
+                ⚡ 4-Way Comparison
+              </button>
+              <button
+                onClick={() => setViewMode('single')}
+                className={`px-6 py-2 rounded-lg font-medium transition-all ${
+                  viewMode === 'single'
+                    ? 'bg-sage-400 text-white shadow-md'
+                    : 'text-gray-600 hover:text-sage-600'
+                }`}
+              >
+                Single Context
+              </button>
+            </div>
+          </div>
+
+          {viewMode === 'comparison' ? (
+            /* Comparison View */
+            <div>
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-gray-700 mb-3 text-center">
+                  Select a Product to Compare:
+                </label>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                  {products.map((product) => (
+                    <button
+                      key={product.id}
+                      onClick={() => setSelectedProduct(product)}
+                      className={`p-3 rounded-xl border-2 transition-all text-left ${
+                        selectedProduct.id === product.id
+                          ? 'border-sage-400 bg-sage-50 shadow-md'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="font-medium text-xs">{product.name}</div>
+                      <div className="text-xs text-gray-500">{product.brand}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <ComparisonView product={selectedProduct} />
+            </div>
+          ) : (
+            /* Single Context View */
+            <div className="max-w-6xl mx-auto">
+              {/* Product Selector */}
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-gray-700 mb-3">Select a Product:</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                  {products.map((product) => (
                   <button
                     key={product.id}
                     onClick={() => setSelectedProduct(product)}
@@ -361,7 +426,8 @@ export default function LensLanding() {
                 {translation.overallMessage}
               </div>
             </motion.div>
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -369,17 +435,9 @@ export default function LensLanding() {
       <section className="section bg-gradient-to-br from-sage-600 to-sage-500 text-white">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-bold mb-4 text-white">This is just the beginning.</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Lens demonstrates that accessibility isn't about "simplifying" for others—it's about respecting different ways of knowing.
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Lens demonstrates that accessibility isn't about "simplifying" for others, it's about respecting different ways of knowing.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://github.com/yourusername/lens" className="btn bg-white text-sage-700 hover:bg-gray-100">
-              View on GitHub
-            </a>
-            <a href="mailto:your@email.com" className="btn btn-outline border-white text-white hover:bg-white/10">
-              Get in Touch
-            </a>
-          </div>
         </div>
       </section>
     </main>
