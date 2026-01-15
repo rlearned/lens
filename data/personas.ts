@@ -65,7 +65,7 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Trust Deficit, Not Comprehension Deficit',
     description: 'Rural consumers can understand information when presented appropriately, the issue is they don\'t trust institutional sources.',
     context: ['rural', 'eastwa'],
-    evidence: '14 of 16 participants (88%) could correctly interpret visual comparisons but only 8 of 16 (50%) trusted numerical labels without social validation.',
+    evidence: '14 of 16 participants (81%) could correctly interpret visual comparisons but only 8 of 16 (50%) trusted numerical labels without social validation.',
     designImplication: 'Add trust indicators (neighbor verified, community choice) rather than just "simplifying" information.',
   },
   {
@@ -105,7 +105,7 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Serving Sizes Are Arbitrary and Confusing',
     description: '"1 serving" means nothing without cultural context. People eat until satisfied, not until they\'ve consumed exactly 28 grams.',
     context: ['rural', 'eastwa', 'lowlit'],
-    evidence: '88% of participants couldn\'t correctly estimate what "1 oz" looks like. 75% correctly identified "a handful" size.',
+    evidence: '69% of participants couldn\'t correctly estimate what "1 oz" looks like. 75% correctly identified "a handful" size.',
     designImplication: 'Use body-relative measurements (palm, handful, fist) or familiar containers (bowls, cups).',
   },
 ];
