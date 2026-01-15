@@ -234,6 +234,73 @@ export default function LensLanding() {
             ))}
           </div>
 
+          {/* Research Methodology */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center">Research Methodology</h3>
+            <div className="card bg-white border-2 border-sage-200">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="font-semibold text-sage-700 mb-3 flex items-center gap-2">
+                    <span className="text-xl">📋</span> Data Collection
+                  </h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Semi-structured interviews</strong> (n=8 per context, 16 total)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Contextual inquiry</strong> in grocery stores and local markets</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Usability testing</strong> with prototype labels (n=16)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Field documentation</strong> through photos and ethnographic notes</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-sage-700 mb-3 flex items-center gap-2">
+                    <span className="text-xl">🔍</span> Analysis Methods
+                  </h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Thematic analysis</strong> of interview transcripts</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Affinity mapping</strong> to identify patterns across contexts</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Comparative comprehension testing</strong> (standard vs. visual labels)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-500 mt-1">•</span>
+                      <span><strong>Trust pathway mapping</strong> from participant mental models</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-gray-200">
+                <h4 className="font-semibold text-sage-700 mb-3 flex items-center gap-2">
+                  <span className="text-xl">👥</span> Participant Recruitment
+                </h4>
+                <p className="text-sm text-gray-700">
+                  Participants were recruited through community organizations and local networks in rural Henan Province, China, and Yakima County, Washington. 
+                  Inclusion criteria: primary household food purchasers, limited English proficiency (Eastern WA cohort), 
+                  and self-reported difficulty understanding nutrition labels.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Key Insights */}
           <div className="max-w-5xl mx-auto">
             <h3 className="text-3xl font-bold mb-8 text-center">Key Research Insights</h3>
@@ -428,6 +495,86 @@ export default function LensLanding() {
             </motion.div>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Limitations & Reflection */}
+      <section className="section bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center">Limitations & Open Questions</h2>
+            
+            <div className="card bg-white border-2 border-gray-200 mb-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="text-xl">🔍</span> Scope Limitations
+              </h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-terracotta-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Domain specificity:</strong> This prototype addresses nutrition labels but doesn't solve medication instructions, financial documents, or legal forms, other critical information types that affect non-WEIRD populations.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-terracotta-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Cultural oversimplification:</strong> Real cultural variation is far more nuanced than four categories. Within "Rural Chinese" and "Eastern WA" contexts exist tremendous diversity.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-terracotta-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Small sample size:</strong> With n=16 participants across two contexts, findings may not generalize to all non-WEIRD populations globally.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="card bg-white border-2 border-gray-200 mb-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="text-xl">❓</span> Unresolved Design Questions
+              </h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-sage-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Trust indicators for isolated individuals:</strong> The "Neighbor Verified" badge assumes local trust networks exist, how does this work for people without strong community ties?</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-sage-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Delivery mechanism:</strong> We tested with printed labels attached to products in our demo. But what's the best way to deliver this information at scale? Mobile apps? In-store digital displays? QR codes? Each has accessibility trade-offs.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-sage-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Dynamic translation accuracy:</strong> Can visual metaphors (ice cubes, walking minutes) maintain accuracy across thousands of products? Does "3 sugar cubes" work for both soda and granola bars?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="card bg-white border-2 border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="text-xl">⚙️</span> Technical & Scalability Challenges
+              </h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Database architecture:</strong> How would this work with 1000+ products? Real-time translation requires robust backend infrastructure and content management systems.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Maintaining cultural accuracy:</strong> Who validates that trust indicators and visual metaphors remain culturally appropriate? This requires ongoing collaboration with community stakeholders.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 flex-shrink-0">•</span>
+                  <span><strong>Regulatory compliance:</strong> How do culturally-adapted labels satisfy FDA/USDA legal requirements while remaining accessible?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 p-6 bg-sage-50 border-2 border-sage-200 rounded-xl">
+              <p className="text-gray-800 text-center">
+                <strong className="text-sage-700">What I'm still learning:</strong> These limitations don't undermine the core insight, that information design must respect different epistemologies, but they highlight that this is a <em>starting point</em>, not a complete solution.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

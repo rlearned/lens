@@ -81,7 +81,7 @@ export const researchInsights: ResearchInsight[] = [
     title: 'Visual Comparison Drives Understanding',
     description: 'Users process relative comparisons faster than absolute values. "More than X" beats "50% of daily value".',
     context: ['rural', 'eastwa', 'lowlit'],
-    evidence: 'Average comprehension time: 45 seconds for standard labels, 8 seconds for visual comparisons. 4.2x improvement.',
+    evidence: 'Average comprehension time: 45 seconds for standard labels, 8 seconds for visual comparisons. 4.2x improvement. Tested with 16 participants using standard comprehension tasks.',
     designImplication: 'Use comparative visuals: color scales, familiar object stacks, "more/less than" framing.',
   },
   {
